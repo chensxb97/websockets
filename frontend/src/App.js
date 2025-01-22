@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import NavBar from "./Components/NavBar";
+import ChatContainer from "./Components/ChatContainer";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [navWidth, setNavWidth] = useState(200); // Initial navbar width
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <NavBar width={navWidth} setWidth={setNavWidth} />
+      <ChatContainer />
     </div>
   );
-}
+};
 
 export default App;
